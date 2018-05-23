@@ -21,7 +21,7 @@ namespace EmployeeTracker.Api.Controllers.Employees
         [ResponseType(typeof(IEmployee))]
         public async Task<IHttpActionResult> GetEmployees()
         {
-            var result = _service.GetEmployeesAsync();
+            var result =await _service.GetEmployeesAsync();
             return Ok(result);
         }
     }

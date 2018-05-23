@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeTracker.Api", "EmployeeTracker.Api\EmployeeTracker.Api.csproj", "{53BDEC16-C170-4A4D-9C75-BC9E29CF6333}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DD37447-FB59-47ED-BF75-F72FA2773D6B} = {9DD37447-FB59-47ED-BF75-F72FA2773D6B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeTracker.Services", "EmployeeTracker.Services\EmployeeTracker.Services.csproj", "{9DD37447-FB59-47ED-BF75-F72FA2773D6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53BDEC16-C170-4A4D-9C75-BC9E29CF6333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53BDEC16-C170-4A4D-9C75-BC9E29CF6333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53BDEC16-C170-4A4D-9C75-BC9E29CF6333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53BDEC16-C170-4A4D-9C75-BC9E29CF6333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD37447-FB59-47ED-BF75-F72FA2773D6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD37447-FB59-47ED-BF75-F72FA2773D6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD37447-FB59-47ED-BF75-F72FA2773D6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD37447-FB59-47ED-BF75-F72FA2773D6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

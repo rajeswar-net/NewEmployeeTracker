@@ -10,14 +10,16 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
+var sidebar_component_1 = require("./layout/sidebar.component");
 var app_routing_1 = require("./app.routing");
+var dashboard_module_1 = require("./dashboard/dashboard.module");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_1.routing],
-            declarations: [app_component_1.AppComponent],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_1.routing, dashboard_module_1.DashboardModule],
+            declarations: [app_component_1.AppComponent, sidebar_component_1.SidebarComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

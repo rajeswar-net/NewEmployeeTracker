@@ -131,6 +131,7 @@
   <ItemGroup>
     <Content Include="app\app.component.html" />
     <Content Include="app\dashboard\dashboard.component.html" />
+    <Content Include="app\employees\employees.component.html" />
     <Content Include="app\layout\sidebar.component.html" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -197,6 +198,12 @@
     <TypeScriptCompile Include="app\dashboard\dashboard.routing.ts" />
     <TypeScriptCompile Include="app\dashboard\dashboard.service.ts" />
     <TypeScriptCompile Include="app\dashboard\ng2-nvd3.ts" />
+    <TypeScriptCompile Include="app\employees\employee.model.ts" />
+    <TypeScriptCompile Include="app\employees\employee.service.ts" />
+    <TypeScriptCompile Include="app\employees\employees-resolve.service.ts" />
+    <TypeScriptCompile Include="app\employees\employees.component.ts" />
+    <TypeScriptCompile Include="app\employees\employees.module.ts" />
+    <TypeScriptCompile Include="app\employees\employees.routing.ts" />
     <TypeScriptCompile Include="app\layout\sidebar.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>

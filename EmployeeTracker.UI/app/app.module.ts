@@ -8,10 +8,10 @@ import { SidebarComponent} from './layout/sidebar.component';
 import { routing } from "./app.routing";
 
 import { DashboardModule } from "./dashboard/dashboard.module";
-
+import { EmployeeModule } from "./employees/employees.module";
 
 @NgModule({
-    imports: [BrowserModule, HttpModule, routing, DashboardModule],
+    imports: [BrowserModule, HttpModule, routing, DashboardModule,EmployeeModule],
     declarations: [AppComponent, SidebarComponent],
     bootstrap: [AppComponent]
 })

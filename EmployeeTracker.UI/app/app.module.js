@@ -13,12 +13,13 @@ var app_component_1 = require("./app.component");
 var sidebar_component_1 = require("./layout/sidebar.component");
 var app_routing_1 = require("./app.routing");
 var dashboard_module_1 = require("./dashboard/dashboard.module");
+var employees_module_1 = require("./employees/employees.module");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_1.routing, dashboard_module_1.DashboardModule],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_1.routing, dashboard_module_1.DashboardModule, employees_module_1.EmployeeModule],
             declarations: [app_component_1.AppComponent, sidebar_component_1.SidebarComponent],
             bootstrap: [app_component_1.AppComponent]
         })

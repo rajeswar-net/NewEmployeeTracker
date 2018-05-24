@@ -26,6 +26,8 @@
     "@angular/router": "4.0.2",
 
     "angular-in-memory-web-api": "~0.2.4",
+    "angular2-datatable": "^0.6.0",
+
     "systemjs": "0.19.40",
     "core-js": "^2.4.1",
     "rxjs": "5.0.1",
@@ -55,7 +57,7 @@
     "@types/jasmine": "2.5.36",
     "ng2-bs3-modal": "0.10.4",
     "@angular/material": "2.0.0-beta.6",
-    "@angular/animations": "^4.0.0",
+    "@angular/animations": "^4.0.0"
    
   },
   "repository": {}

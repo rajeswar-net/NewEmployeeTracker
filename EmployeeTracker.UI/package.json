@@ -29,7 +29,10 @@
     "systemjs": "0.19.40",
     "core-js": "^2.4.1",
     "rxjs": "5.0.1",
-    "zone.js": "^0.7.4"
+    "zone.js": "^0.7.4",
+    "ng2-nvd3": "^2.0.0",
+    "nvd3": "^1.8.6",
+    "d3": "^3.5.6"
   },
   "devDependencies": {
     "concurrently": "^3.2.0",
@@ -52,7 +55,8 @@
     "@types/jasmine": "2.5.36",
     "ng2-bs3-modal": "0.10.4",
     "@angular/material": "2.0.0-beta.6",
-    "@angular/animations": "^4.0.0"
+    "@angular/animations": "^4.0.0",
+   
   },
   "repository": {}
 }

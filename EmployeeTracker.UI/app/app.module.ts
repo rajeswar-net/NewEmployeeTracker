@@ -9,9 +9,10 @@ import { routing } from "./app.routing";
 
 import { DashboardModule } from "./dashboard/dashboard.module";
 
+
 @NgModule({
     imports: [BrowserModule, HttpModule, routing, DashboardModule],
-    declarations: [AppComponent,SidebarComponent],
+    declarations: [AppComponent, SidebarComponent],
     bootstrap: [AppComponent]
 })
 

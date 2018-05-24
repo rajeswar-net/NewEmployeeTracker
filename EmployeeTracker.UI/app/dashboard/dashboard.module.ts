@@ -10,7 +10,7 @@ import { dashboardRouting } from './dashboard.routing';
 
 @NgModule({
     imports: [dashboardRouting],
-    declarations: [DashboardComponent,nvD3],
+    declarations: [DashboardComponent, nvD3],
     providers: [DashboardService, DashboardResolve]
 })
 

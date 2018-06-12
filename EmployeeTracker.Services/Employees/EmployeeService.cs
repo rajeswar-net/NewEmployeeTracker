@@ -16,6 +16,28 @@
         {
             _repo = repo;
         }
+
+        public async Task<IEnumerable<Employee>> AddEmployeeAsync(IEmployee newEmployee)
+        {
+            var addEmployeeParams = new DynamicParameters();
+            addEmployeeParams.Add("@FirstName", newEmployee.FirstName);
+            addEmployeeParams.Add("@LastName", newEmployee.LastName);
+            addEmployeeParams.Add("@PositionId", newEmployee.PositionId);
+            addEmployeeParams.Add("@OfficeId", newEmployee.officeId);
+            addEmployeeParams.Add("@Sex", newEmployee.Sex);
+            addEmployeeParams.Add("@Age", newEmployee.Age);
+            addEmployeeParams.Add("@StartDate", newEmployee.StartDate);
+            addEmployeeParams.Add("@Salary", newEmployee.Salary);
+            addEmployeeParams.Add("@Updated_Utc", DateTime.UtcNow);
+            return await _repo.WithConnection(async c =>
+            {
+                var results = await c.QueryAsync<Employee>("AddEmployees",
+                    addEmployeeParams,
+                    commandType: CommandType.StoredProcedure);
+                return results;
+            });
+        }
+
         public async Task<IEnumerable<Employee>> GetEmployeesAsync()
         {
             return await _repo.WithConnection(async c =>

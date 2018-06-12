@@ -15,4 +15,6 @@ export class EmployeeComponent implements OnInit {
     ngOnInit() {
         this.employees = this.route.snapshot.data['employees'];
     }
+
+
 }

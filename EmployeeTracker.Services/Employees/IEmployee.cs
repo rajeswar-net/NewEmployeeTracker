@@ -17,5 +17,7 @@
         int Age { get; set; }
         DateTime StartDate { get; set; }
         decimal Salary { get; set; }
+        int PositionId { get; set; }
+        int officeId { get; set; }
     }
 }

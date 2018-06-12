@@ -35,6 +35,10 @@
             builder.RegisterType<DashboardService>()
               .As<IDashboardService>()
               .InstancePerLifetimeScope();
+
+            builder.RegisterType<Employee>()
+                .As<IEmployee>()
+                .InstancePerLifetimeScope();
         }
     }
 }

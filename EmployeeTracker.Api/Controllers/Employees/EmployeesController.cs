@@ -10,18 +10,34 @@ namespace EmployeeTracker.Api.Controllers.Employees
     public class EmployeesController : ApiController
     {
         private readonly IEmployeeService _service;
+        private readonly IEmployee _employee;
 
         public EmployeesController(IEmployeeService service)
         {
             _service = service;
         }
+        public EmployeesController(IEmployeeService service,IEmployee employee)
+        {
+            _service = service;
+            _employee = employee;
+        }
+
 
         [Route("")]
         [HttpGet]
         [ResponseType(typeof(IEmployee))]
         public async Task<IHttpActionResult> GetEmployees()
         {
-            var result =await _service.GetEmployeesAsync();
+            var result = await _service.GetEmployeesAsync();
+            return Ok(result);
+        }
+        [Route("")]
+        [HttpPost]
+        [ResponseType(typeof(IEmployee))]
+        public async Task<IHttpActionResult> AddEmployee([FromBody] Employee newEmployee)
+        {
+            IEmployee employee = newEmployee;
+            var result = await _service.AddEmployeeAsync(employee);
             return Ok(result);
         }
     }

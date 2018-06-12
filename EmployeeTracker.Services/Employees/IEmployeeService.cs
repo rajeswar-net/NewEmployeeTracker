@@ -5,5 +5,7 @@
     public interface IEmployeeService
     {
         Task<IEnumerable<Employee>> GetEmployeesAsync();
+
+        Task<IEnumerable<Employee>> AddEmployeeAsync(IEmployee newEmployee);
     }
 }

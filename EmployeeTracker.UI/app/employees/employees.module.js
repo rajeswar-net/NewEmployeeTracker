@@ -15,12 +15,14 @@ var employee_service_1 = require("./employee.service");
 var employees_resolve_service_1 = require("./employees-resolve.service");
 /* Employees Router */
 var employees_routing_1 = require("./employees.routing");
+var ng2_bs3_modal_1 = require("ng2-bs3-modal/ng2-bs3-modal");
+var forms_1 = require("@angular/forms");
 var EmployeeModule = /** @class */ (function () {
     function EmployeeModule() {
     }
     EmployeeModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, employees_routing_1.employeesRouting, angular2_datatable_1.DataTableModule],
+            imports: [common_1.CommonModule, employees_routing_1.employeesRouting, angular2_datatable_1.DataTableModule, ng2_bs3_modal_1.Ng2Bs3ModalModule, forms_1.ReactiveFormsModule],
             declarations: [employees_component_1.EmployeeComponent],
             providers: [employee_service_1.EmployeeService, employees_resolve_service_1.EmployeeResolve]
         })

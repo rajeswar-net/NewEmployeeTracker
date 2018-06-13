@@ -2,16 +2,31 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/RX";
 import { Employee } from "./employee.model";
+import { Office } from "./office.model";
+import { Position } from "./position.model";
+
 
 @Injectable()
 export class EmployeeService {
 
-    private url = 'http://localhost/employee-tracker-api/api/employees';
+    private url = 'http://localhost/employee-tracker-api/api';
 
     constructor(private http: Http) { }
 
     getList(): Observable<Employee[]> {
-        return this.http.get(this.url)
+        return this.http.get(this.url + '/employees')
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    getOfficeList(): Observable<Office[]> {
+        return this.http.get(this.url+'/offices')
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    getPositionList(): Observable<Position[]> {
+        return this.http.get(this.url + '/positions')
             .map(this.extractData)
             .catch(this.handleError);
     }

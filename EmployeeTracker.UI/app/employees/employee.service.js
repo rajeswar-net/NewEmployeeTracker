@@ -15,10 +15,20 @@ var RX_1 = require("rxjs/RX");
 var EmployeeService = /** @class */ (function () {
     function EmployeeService(http) {
         this.http = http;
-        this.url = 'http://localhost/employee-tracker-api/api/employees';
+        this.url = 'http://localhost/employee-tracker-api/api';
     }
     EmployeeService.prototype.getList = function () {
-        return this.http.get(this.url)
+        return this.http.get(this.url + '/employees')
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    EmployeeService.prototype.getOfficeList = function () {
+        return this.http.get(this.url + '/offices')
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    EmployeeService.prototype.getPositionList = function () {
+        return this.http.get(this.url + '/positions')
             .map(this.extractData)
             .catch(this.handleError);
     };

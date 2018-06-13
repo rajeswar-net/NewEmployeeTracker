@@ -46,5 +46,21 @@
                 return results;
             });
         }
+        public async Task<IEnumerable<Office>> GetOfficesAsync()
+        {
+            return await _repo.WithConnection(async c =>
+            {
+                var results = await c.QueryAsync<Office>("GetOffices", commandType: CommandType.StoredProcedure);
+                return results;
+            });
+        }
+        public async Task<IEnumerable<Position>> GetPositionsAsync()
+        {
+            return await _repo.WithConnection(async c =>
+            {
+                var results = await c.QueryAsync<Position>("GetPositions", commandType: CommandType.StoredProcedure);
+                return results;
+            });
+        }
     }
 }

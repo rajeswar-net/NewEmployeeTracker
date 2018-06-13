@@ -16,7 +16,7 @@ namespace EmployeeTracker.Api.Controllers.Employees
         {
             _service = service;
         }
-        public EmployeesController(IEmployeeService service,IEmployee employee)
+        public EmployeesController(IEmployeeService service, IEmployee employee)
         {
             _service = service;
             _employee = employee;
@@ -38,6 +38,24 @@ namespace EmployeeTracker.Api.Controllers.Employees
         {
             IEmployee employee = newEmployee;
             var result = await _service.AddEmployeeAsync(employee);
+            return Ok(result);
+        }
+
+        [Route("~/api/offices")]
+        [HttpGet]
+        [ResponseType(typeof(IOffice))]
+        public async Task<IHttpActionResult> GetOffices()
+        {
+            var result = await _service.GetOfficesAsync();
+            return Ok(result);
+        }
+
+        [Route("~/api/positions")]
+        [HttpGet]
+        [ResponseType(typeof(IPosition))]
+        public async Task<IHttpActionResult> GetPositions()
+        {
+            var result = await _service.GetPositionsAsync();
             return Ok(result);
         }
     }

@@ -138,6 +138,7 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\loading-bars.css" />
     <Content Include="Content\css\sb-admin-2.css" />
+    <Content Include="Content\images\calendar-icon.svg" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\loading-bars.svg" />
     <Content Include="favicon.ico" />
@@ -204,6 +205,8 @@
     <TypeScriptCompile Include="app\employees\employees.component.ts" />
     <TypeScriptCompile Include="app\employees\employees.module.ts" />
     <TypeScriptCompile Include="app\employees\employees.routing.ts" />
+    <TypeScriptCompile Include="app\employees\office.model.ts" />
+    <TypeScriptCompile Include="app\employees\position.model.ts" />
     <TypeScriptCompile Include="app\layout\sidebar.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>

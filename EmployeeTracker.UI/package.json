@@ -27,6 +27,7 @@
 
     "angular-in-memory-web-api": "~0.2.4",
     "angular2-datatable": "^0.6.0",
+    "ng4-datepicker": "^1.0.12",
 
     "systemjs": "0.19.40",
     "core-js": "^2.4.1",

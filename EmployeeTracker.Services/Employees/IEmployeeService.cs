@@ -7,5 +7,8 @@
         Task<IEnumerable<Employee>> GetEmployeesAsync();
 
         Task<IEnumerable<Employee>> AddEmployeeAsync(IEmployee newEmployee);
+
+        Task<IEnumerable<Position>> GetPositionsAsync();
+        Task<IEnumerable<Office>> GetOfficesAsync();
     }
 }

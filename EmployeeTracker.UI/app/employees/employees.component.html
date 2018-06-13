@@ -6,13 +6,13 @@
                 <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                 <li class="active"><i class="fa fa-table"></i> {{title}}</li>
             </ol>
-            
+
             <div class="alert alert-info alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 We're using <a class="alert-link" href="https://github.com/mariuszfoltak/angular2-datatable" target="_blank">angular2-datatable</a> for the sort and paging function on the grid. Read the documentation for more customization options or feel free to use something else!
             </div>
             <div style="padding-bottom:10px">
-                <button class="btn btn-primary pull-right">Add New Employee</button>
+                <button class="btn btn-primary pull-right" (click)="addEmployee()">Add New Employee</button>
             </div>
         </div>
     </div><!-- /.row -->
@@ -67,6 +67,69 @@
         </div>
     </div>
 </div>
+
+<modal #modal>
+    <form novalidate (ngSubmit)="onSubmit(userFrm)" [formGroup]="employeeFrm">
+        <modal-header [show-close]="true">
+            <h4 class="modal-title">{{AddEmpTitle}}</h4>
+        </modal-header>
+        <modal-body>
+            <div class="form-group">
+                <div>
+                    <span>First name*</span>
+                    <input type="text" class="form-control" placeholder="First Name" formControlName="FirstName">
+                </div>
+                <div>
+                    <span>Last name</span>
+                    <input type="text" class="form-control" placeholder="Last Name" formControlName="LastName">
+                </div>
+                <div>
+                    <span>Gender*</span>
+                    <select formControlName="Gender" class="form-control">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div>
+                    <span>Office</span>
+                    <select formControlName="Office" class="form-control">
+                        <option value="0">--Select--</option>
+                        <option *ngFor="let office of offices"
+                                value={{office.id}}>
+                            {{office.officeName}}
+                        </option>
+                    </select>  
+                </div>
+                <div>
+                    <span>Position</span>
+                    <select formControlName="Position" class="form-control">
+                        <option value="0">--Select--</option>
+                        <option *ngFor="let position of positions"
+                                value={{position.id}}>
+                            {{position.positionName}}
+                        </option>
+                    </select>
+                </div>
+                <!--<div>
+                    <span>Start Date</span>
+                    <input class="form-control" placeholder="yyyy-mm-dd"
+                           name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                            <img src="../../Content/images/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+                        </button>
+                    </div>
+                </div>-->
+            </div>
+        </modal-body>
+        <modal-footer>
+            <div>
+                <a class="btn btn-default" (click)="modal.dismiss()">Cancel</a>
+                <button type="submit" [disabled]="employeeFrm.invalid" class="btn btn-primary">{{modalBtnTitle}}</button>
+            </div>
+        </modal-footer>
+    </form>
+</modal>
 
 <!-- Close the Splash screen -->
 <script src="content/js/loading-bars.js"></script>

@@ -57,6 +57,10 @@
     <Compile Include="Employees\EmployeeService.cs" />
     <Compile Include="Employees\IEmployee.cs" />
     <Compile Include="Employees\IEmployeeService.cs" />
+    <Compile Include="Employees\IOffice.cs" />
+    <Compile Include="Employees\IPosition.cs" />
+    <Compile Include="Employees\Office.cs" />
+    <Compile Include="Employees\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServer\IRepository.cs" />
     <Compile Include="SqlServer\Repository.cs" />

@@ -28,7 +28,9 @@
             'angular2-datatable': 'npm:/angular2-datatable',
             'lodash': 'npm:lodash/lodash.js',
             'ng2-bs3-modal': 'npm:/ng2-bs3-modal',
-            'ng2-nvd3': 'npm:/ng2-nvd3',
+            'ng2-nvd3': 'npm:/ng2-nvd3'
+            //'ngx-mydatepicker': 'npm:/ngx-mydatepicker'
+            
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -44,6 +46,9 @@
             'ng2-nvd3': {
                 main: '/build/index.js', defaultExtension: 'js'
             },
+            //'ngx-mydatepicker': {
+            //    main: '/bundles/ngx-mydatepicker.umd.min.js', defaultExtension: 'js'
+            //},
             'angular2-datatable': {
                 main: 'index.js', defaultExtension: 'js'
             }

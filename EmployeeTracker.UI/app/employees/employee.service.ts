@@ -1,4 +1,4 @@
-﻿import { Http, Response } from "@angular/http";
+﻿import { Http, Response, Headers, RequestOptions } from "@angular/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/RX";
 import { Employee } from "./employee.model";
@@ -8,7 +8,7 @@ import { Position } from "./position.model";
 
 @Injectable()
 export class EmployeeService {
-
+    
     private url = 'http://localhost/employee-tracker-api/api';
 
     constructor(private http: Http) { }
@@ -20,7 +20,7 @@ export class EmployeeService {
     }
 
     getOfficeList(): Observable<Office[]> {
-        return this.http.get(this.url+'/offices')
+        return this.http.get(this.url + '/offices')
             .map(this.extractData)
             .catch(this.handleError);
     }
@@ -31,6 +31,15 @@ export class EmployeeService {
             .catch(this.handleError);
     }
 
+    addEmployee(model: any): Observable<Employee> {
+            
+        let body = JSON.stringify(model);
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers })
+        return this.http.post(this.url + '/employees', body, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
     private extractData(res: Response) {
         var data = res.json();
         return data || {};

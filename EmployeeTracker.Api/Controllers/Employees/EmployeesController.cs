@@ -2,6 +2,7 @@
 namespace EmployeeTracker.Api.Controllers.Employees
 {
     using Services.Employees;
+    using System;
     using System.Threading.Tasks;
     using System.Web.Http;
     using System.Web.Http.Description;
@@ -36,9 +37,16 @@ namespace EmployeeTracker.Api.Controllers.Employees
         [ResponseType(typeof(IEmployee))]
         public async Task<IHttpActionResult> AddEmployee([FromBody] Employee newEmployee)
         {
-            IEmployee employee = newEmployee;
-            var result = await _service.AddEmployeeAsync(employee);
-            return Ok(result);
+            try
+            {
+                IEmployee employee = newEmployee;
+                var result = await _service.AddEmployeeAsync(employee);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
         [Route("~/api/offices")]

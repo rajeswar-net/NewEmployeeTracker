@@ -22,8 +22,8 @@
             var addEmployeeParams = new DynamicParameters();
             addEmployeeParams.Add("@FirstName", newEmployee.FirstName);
             addEmployeeParams.Add("@LastName", newEmployee.LastName);
-            addEmployeeParams.Add("@PositionId", newEmployee.PositionId);
-            addEmployeeParams.Add("@OfficeId", newEmployee.officeId);
+            addEmployeeParams.Add("@PositionId", newEmployee.Position);
+            addEmployeeParams.Add("@OfficeId", newEmployee.Office);
             addEmployeeParams.Add("@Sex", newEmployee.Sex);
             addEmployeeParams.Add("@Age", newEmployee.Age);
             addEmployeeParams.Add("@StartDate", newEmployee.StartDate);

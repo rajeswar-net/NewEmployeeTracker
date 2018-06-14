@@ -32,6 +32,14 @@ var EmployeeService = /** @class */ (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
+    EmployeeService.prototype.addEmployee = function (model) {
+        var body = JSON.stringify(model);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.post(this.url + '/employees', body, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
     EmployeeService.prototype.extractData = function (res) {
         var data = res.json();
         return data || {};

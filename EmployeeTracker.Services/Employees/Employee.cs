@@ -13,6 +13,6 @@
         public decimal Salary { get; set; }
         public DateTime StartDate { get; set; }
         public int PositionId { get; set; }
-        public int officeId { get; set; }
+        public int OfficeId { get; set; }
     }
 }

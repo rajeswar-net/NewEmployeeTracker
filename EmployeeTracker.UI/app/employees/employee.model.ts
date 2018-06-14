@@ -8,4 +8,6 @@
     age: number;
     startDate: string;
     salary: number;
+    positionId: string;
+    officeId: string;
 }

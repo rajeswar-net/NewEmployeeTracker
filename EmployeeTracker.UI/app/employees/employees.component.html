@@ -69,61 +69,73 @@
 </div>
 
 <modal #modal>
-    <form novalidate (ngSubmit)="onSubmit(userFrm)" [formGroup]="employeeFrm">
+    <form novalidate (ngSubmit)="onSubmit(employeeFrm)" [formGroup]="employeeFrm">
         <modal-header [show-close]="true">
             <h4 class="modal-title">{{AddEmpTitle}}</h4>
         </modal-header>
         <modal-body>
             <div class="form-group">
-                <div>
-                    <span>First name*</span>
-                    <input type="text" class="form-control" placeholder="First Name" formControlName="FirstName">
-                </div>
-                <div>
-                    <span>Last name</span>
-                    <input type="text" class="form-control" placeholder="Last Name" formControlName="LastName">
-                </div>
-                <div>
-                    <span>Gender*</span>
-                    <select formControlName="Gender" class="form-control">
-                        <option>Male</option>
-                        <option>Female</option>
-                    </select>
-                </div>
-                <div>
-                    <span>Office</span>
-                    <select formControlName="Office" class="form-control">
-                        <option value="0">--Select--</option>
-                        <option *ngFor="let office of offices"
-                                value={{office.id}}>
-                            {{office.officeName}}
-                        </option>
-                    </select>  
-                </div>
-                <div>
-                    <span>Position</span>
-                    <select formControlName="Position" class="form-control">
-                        <option value="0">--Select--</option>
-                        <option *ngFor="let position of positions"
-                                value={{position.id}}>
-                            {{position.positionName}}
-                        </option>
-                    </select>
-                </div>
-                <!--<div>
-                    <span>Start Date</span>
-                    <input class="form-control" placeholder="yyyy-mm-dd"
-                           name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-                            <img src="../../Content/images/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
-                        </button>
+                <div class="from-row">
+                    <div class="col-md-6">
+                        <span>First name*</span>
+                        <input type="text" class="form-control" placeholder="First Name" formControlName="FirstName">
                     </div>
-                </div>-->
+                    <div class="col-md-6">
+                        <span>Last name</span>
+                        <input type="text" class="form-control" placeholder="Last Name" formControlName="LastName">
+                    </div>
+                </div>
+                <div class="from-row">
+                    <div class="col-md-6">
+                        <span>Sex*</span>
+                        <select formControlName="Sex" class="form-control">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <span>Age*</span>
+                        <input type="text" class="form-control" placeholder="Age" formControlName="Age">
+                    </div>
+                </div>
+                <div class="from-row">
+                    <div class="col-md-6">
+                        <span>Start Date*</span>
+                        <!--<my-date-picker name="startDate" [options]="startDatePickerOptions"
+                        formControlName="startDate"></my-date-picker>-->
+                        <input type="text" class="form-control" placeholder="Start Date" formControlName="StartDate" disabled value="2014-06-14">
+                    </div>
+                    <div class="col-md-6">
+                        <span>Salary*</span>
+                        <input type="number" class="form-control" placeholder="Salary" formControlName="Salary" />
+                    </div>
+                </div>
+                <div class="from-row">
+                    <div class="col-md-6">
+                        <span>Office*</span>
+                        <select formControlName="Office" class="form-control">
+                            <option value="0">--Select--</option>
+                            <option *ngFor="let office of offices"
+                                    value={{office.id}}>
+                                {{office.officeName}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <span>Position*</span>
+                        <select formControlName="Position" class="form-control">
+                            <option value="0">--Select--</option>
+                            <option *ngFor="let position of positions"
+                                    value={{position.id}}>
+                                {{position.positionName}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </modal-body>
         <modal-footer>
-            <div>
+            <div class="from-row">
                 <a class="btn btn-default" (click)="modal.dismiss()">Cancel</a>
                 <button type="submit" [disabled]="employeeFrm.invalid" class="btn btn-primary">{{modalBtnTitle}}</button>
             </div>

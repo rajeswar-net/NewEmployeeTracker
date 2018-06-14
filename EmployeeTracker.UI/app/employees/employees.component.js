@@ -14,6 +14,7 @@ var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
 var ng2_bs3_modal_1 = require("ng2-bs3-modal/ng2-bs3-modal");
 var employee_service_1 = require("./employee.service");
+//import { INgxMyDpOptions } from "ngx-mydatepicker"
 var EmployeeComponent = /** @class */ (function () {
     function EmployeeComponent(route, fb, _employeeService) {
         this.route = route;
@@ -26,14 +27,18 @@ var EmployeeComponent = /** @class */ (function () {
             Id: [''],
             FirstName: ['', forms_1.Validators.required],
             LastName: [''],
-            Gender: ['', forms_1.Validators.required],
-            Office: [''],
-            Position: ['']
+            Sex: ['', forms_1.Validators.required],
+            StartDate: ['', forms_1.Validators.required],
+            Age: ['', forms_1.Validators.required],
+            Salary: ['', forms_1.Validators.required],
+            Office: ['', forms_1.Validators.required],
+            Position: ['', forms_1.Validators.required]
         });
         this.employees = this.route.snapshot.data['employees'];
         //this.getOffices();
     };
     EmployeeComponent.prototype.addEmployee = function () {
+        this.dbops = "create";
         this.SetControlsState(true);
         this.AddEmpTitle = "Add New Employee";
         this.modalBtnTitle = "Add";
@@ -52,6 +57,20 @@ var EmployeeComponent = /** @class */ (function () {
     };
     EmployeeComponent.prototype.SetControlsState = function (isEnable) {
         isEnable ? this.employeeFrm.enable() : this.employeeFrm.disable();
+    };
+    EmployeeComponent.prototype.getEmployees = function () {
+        var _this = this;
+        this._employeeService.getList().subscribe(function (res) { return _this.employees = res; }, function (error) { return _this.errorMessage = error; });
+    };
+    EmployeeComponent.prototype.onSubmit = function (formData) {
+        var _this = this;
+        switch (this.dbops) {
+            case "create":
+                this._employeeService.addEmployee(this.employeeFrm.value).subscribe(function (res) { return _this.newEmployee = res; }, function (error) { return _this.errorMessage = error; });
+                this.employees.push(this.newEmployee);
+                this.modal.dismiss();
+                break;
+        }
     };
     __decorate([
         core_1.ViewChild('modal'),

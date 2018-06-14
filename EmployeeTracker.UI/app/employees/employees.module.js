@@ -17,6 +17,7 @@ var employees_resolve_service_1 = require("./employees-resolve.service");
 var employees_routing_1 = require("./employees.routing");
 var ng2_bs3_modal_1 = require("ng2-bs3-modal/ng2-bs3-modal");
 var forms_1 = require("@angular/forms");
+//import { NgxMyDatePickerModule } from "ngx-mydatepicker";
 var EmployeeModule = /** @class */ (function () {
     function EmployeeModule() {
     }

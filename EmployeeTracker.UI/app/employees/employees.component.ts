@@ -29,7 +29,7 @@ export class EmployeeComponent implements OnInit {
     employees: Employee[];
     positions: Position[];
     offices: Office[];
-    newEmployee: Employee;
+    newEmployee: Employee[];
     constructor(private route: ActivatedRoute, private fb: FormBuilder, private _employeeService: EmployeeService) { }
     ngOnInit() {
         this.employeeFrm = this.fb.group({
@@ -74,8 +74,8 @@ export class EmployeeComponent implements OnInit {
     onSubmit(formData: any) {
         switch (this.dbops) {
             case "create":
-                this._employeeService.addEmployee(this.employeeFrm.value).subscribe(res => this.newEmployee = res, error => this.errorMessage = <any>error);
-                this.employees.push(this.newEmployee);
+                this._employeeService.addEmployee(this.employeeFrm.value).subscribe(res => this.newEmployee = res.json(), error => this.errorMessage = <any>error);
+                alert(this.newEmployee);
                 this.modal.dismiss();
                 break;
         }

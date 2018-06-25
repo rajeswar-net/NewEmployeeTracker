@@ -66,8 +66,8 @@ var EmployeeComponent = /** @class */ (function () {
         var _this = this;
         switch (this.dbops) {
             case "create":
-                this._employeeService.addEmployee(this.employeeFrm.value).subscribe(function (res) { return _this.newEmployee = res; }, function (error) { return _this.errorMessage = error; });
-                this.employees.push(this.newEmployee);
+                this._employeeService.addEmployee(this.employeeFrm.value).subscribe(function (res) { return _this.newEmployee = res.json(); }, function (error) { return _this.errorMessage = error; });
+                alert(this.newEmployee);
                 this.modal.dismiss();
                 break;
         }

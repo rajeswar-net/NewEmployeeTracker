@@ -8,7 +8,7 @@ import { Position } from "./position.model";
 
 @Injectable()
 export class EmployeeService {
-    
+
     private url = 'http://localhost/employee-tracker-api/api';
 
     constructor(private http: Http) { }
@@ -31,8 +31,8 @@ export class EmployeeService {
             .catch(this.handleError);
     }
 
-    addEmployee(model: any): Observable<Employee> {
-            
+    addEmployee(model: any): Observable<any> {
+
         let body = JSON.stringify(model);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers })
@@ -42,6 +42,7 @@ export class EmployeeService {
     }
     private extractData(res: Response) {
         var data = res.json();
+        
         return data || {};
     }
 
